@@ -41,6 +41,8 @@ def gamma2(n, i, th, mu):
     return comb(n,i)*(th*(mu**(n-i)*(1-mu)**i) + (1-th)*(1-mu)**(n-i)*mu**i)
 def gamma3(n, i, thh, mu1, mu2):
     return comb(n,i)*(thh*(mu1**(n-i)*(1-mu1)**i) + (1-thh)*(1-mu2)**(n-i)*mu2**i)
+# We omit the constant log(225!/(43!105!10!41!26!)) of the logarithm of the likelihood function
+# because it does not change the minimum, yet it complicates the expression and is unnecessary.
 def neg_log_likelihood2(votes_acquittal, params2):
     th, mu = params2
     log_lik = (
